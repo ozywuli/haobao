@@ -1,0 +1,19 @@
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.posts-container {
+  font-size: 0;
+}
+
+.post {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  font-size: 1.5rem;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

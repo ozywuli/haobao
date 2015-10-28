@@ -112,7 +112,7 @@
 
 
 
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site container">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'haobao' ); ?></a>
 
 	<div id="sidebar" class="sidebar">
