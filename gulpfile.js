@@ -9,18 +9,12 @@ var cmq = require('gulp-combine-media-queries');
 var minifycss = require('gulp-minify-css');
 
 
-gulp.task('default', function() {
-  return gulp.src('./src/index.php')
-    .pipe(gulp.dest('../wp-content/themes/haobao'))
-});
 
-
-gulp.task('html', function() {
+function compileHTML() {
   return gulp.src('./src/*.php')
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
-});
-
-gulp.task('css', function() {
+}
+function compileCSS() {
   return gulp.src('./src/assets/scss/style.scss')
     .pipe(plumber({
         errorHandler: function (err) {
@@ -37,5 +31,59 @@ gulp.task('css', function() {
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/css/'))
     .pipe(minifycss())
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
+}
+function compileJS() {
+  return gulp.src('./src/assets/js/*.js')
+    .pipe(gulp.dest('../wp-content/themes/haobao/assets/js'));
+}
 
-})
+
+
+
+
+gulp.task('html', ['css', 'js'], function() {
+  return compileHTML();
+});
+gulp.task('css', ['ie-css'], function() {
+  return compileCSS();
+});
+gulp.task('ie-css', function() {
+  return gulp.src('./src/assets/css/*.css')
+    .pipe(gulp.dest('../wp-content/themes/haobao/assets/css/'))
+});
+gulp.task('js', function() {
+  return compileJS();
+});
+
+
+
+
+function watchHTML(error) {
+    handleError(error);
+    gulp.watch(['./src/*.php'], ['html']);
+}
+function watchCSS(error) {
+    handleError(error);
+    gulp.watch(['./src/assets/scss/*.scss'], ['html']);
+}
+function watchJS(error) {
+    handleError(error);
+    gulp.watch(['./src/assets/js/*.js'], ['html']);
+}
+function handleError(error) {
+    var message = error;
+    if (typeof error === 'function' ) return;
+    if (typeof error === 'object' && error.hasOwnProperty('message')) message = error.message;
+    if (message !== undefined) console.log('Error: ' + message);
+}
+function watchTask(error) {
+    handleError(error);
+    watchHTML();
+    watchCSS();
+    watchJS();
+}
+
+
+
+gulp.task('watch', ['html', 'css', 'js'], watchTask);
+gulp.task('default', ['watch']);

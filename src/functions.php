@@ -251,6 +251,9 @@ function twentyfifteen_scripts() {
 	}
 
 	wp_enqueue_script( 'twentyfifteen-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20150330', true );
+
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), 'false', true );
+
 	wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
