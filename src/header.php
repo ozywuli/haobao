@@ -84,11 +84,11 @@
 	</div>
 
 		<ul class="navbar__utils">
-			<li>
-				<a href="#">
+			<li class="navbar__search">
+					<?php get_search_form(); ?>
 					<span class="visuallyhidden">Search icon</span>
 					@@include('partials/icons/search.html')
-				</a>
+
 			</li>
 			<li>
 				<a href="#">
@@ -101,6 +101,15 @@
 
 
 </nav><!-- /navbar -->
+
+
+
+
+
+
+
+
+
 
 
 <div id="page" class="hfeed site">
