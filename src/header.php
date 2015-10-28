@@ -15,6 +15,8 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/html5.js"></script>
 	<![endif]-->
@@ -25,27 +27,10 @@
 
 
 <!-- navbar -->
-<div class="navbar">
+<nav class="navbar clearfix">
 
-	<a href="#" class="menu-toggle">Menu</a>
-	<ul class="sm-links">
-		<li>
-			<a href="#">Twitter</a>
-		</li>
-		<li>
-			<a href="#">Facebook</a>
-		</li>
-		<li>
-			<a href="#">Instagram</a>
-		</li>
-		<li>
-			<a href="#">Google+</a>
-		</li>
-		<li>
-			<a href="#">Tumblr</a>
-		</li>
-	</ul>
 
+	<div class="navbar__brand">
 	<?php
 		if ( is_front_page() && is_home() ) : ?>
 			<h1 class="site-title">
@@ -57,17 +42,65 @@
 			</p>
 		<?php endif;
 	?>
+	</div>
+ 
+	<div class="navbar__menu">
+		<a href="#" class="menu-toggle">
+			<span class="visuallyhidden">menu toggle</span>
+			  @@include('partials/icons/menu.html')
+		</a>
+		<ul class="sm-links">
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Twitter icon</span>
+					 @@include('partials/icons/twitter.html')
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Facebook icon</span>
+					 @@include('partials/icons/facebook.html')
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Instagram icon</span>
+					 @@include('partials/icons/instagram.html')
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Google icon</span>
+					 @@include('partials/icons/google.html')
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Tumblr icon</span>
+					 @@include('partials/icons/tumblr.html')
+				</a>
+			</li>
+		</ul>
+	</div>
 
-	<ul class="navbar__utils">
-		<li>
-			<a href="#">Search</a>
-		</li>
-		<li>
-			<a href="#">Gear</a>
-		</li>
-	</ul>
+		<ul class="navbar__utils">
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Search icon</span>
+					@@include('partials/icons/search.html')
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="visuallyhidden">Gear icon</span>
+					@@include('partials/icons/gear.html')
+				</a>
+			</li>
+		</ul>
 
-</div><!-- /navbar -->
+
+
+</nav><!-- /navbar -->
 
 
 <div id="page" class="hfeed site">

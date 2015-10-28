@@ -141,6 +141,8 @@ function twentyfifteen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyfifteen_widgets_init' );
 
+
+
 if ( ! function_exists( 'twentyfifteen_fonts_url' ) ) :
 /**
  * Register Google fonts for Twenty Fifteen.
@@ -156,18 +158,18 @@ function twentyfifteen_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
+	 * by Source Sans Pro Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
-		$fonts[] = 'Noto Sans:400italic,700italic,400,700';
+	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'twentyfifteen' ) ) {
+		$fonts[] = 'Source Sans Pro, Helvetica, Arial, sans-serif';
 	}
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
+	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
-		$fonts[] = 'Noto Serif:400italic,700italic,400,700';
+	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'twentyfifteen' ) ) {
+		$fonts[] = 'Source Sans Pro, Helvetica, Arial, sans-serif';
 	}
 
 	/*
@@ -252,7 +254,7 @@ function twentyfifteen_scripts() {
 
 	wp_enqueue_script( 'twentyfifteen-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20150330', true );
 
-	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), 'false', true );
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), 'false', true );
 
 	wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',

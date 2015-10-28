@@ -1,7 +1,91 @@
 .navbar {
   position: fixed;
-  top: 0;
+  top: 32px;
   right: 0;
   left: 0;
   background: #FFF;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: center;
+  @include z-index('navbar');
+
+  svg {
+    position: relative;
+    top: 2px;
+    width: auto;
+    height: 20px;
+  }
 }
+
+
+/* navbar interactions*/
+.navbar__menu {
+  float: left;
+  position: relative;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+}
+
+.menu-toggle {
+  display: inline-block;
+  padding: 10px;
+}
+.sm-links {
+  display: inline-block;
+  li {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  svg {
+    position: static;
+    width: auto;
+    height: 15px;
+  }
+}
+
+.navbar__utils {
+  float: right;
+  position: relative;
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 10px;
+  }
+}
+
+
+/* center */
+.navbar__brand {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-transform: uppercase;
+  @include z-index('navbar-brand');
+}
+  .site-title {
+    height: 100%;
+    font-size: 2rem;
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      color: #000;
+    }
+  }
+
+
+
+

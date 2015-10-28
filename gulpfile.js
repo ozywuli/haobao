@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 
+var preprocess = require('gulp-preprocess');
+var fileinclude = require('gulp-file-include')
 var rename = require("gulp-rename");
 var plumber = require('gulp-plumber');
 
@@ -12,6 +14,7 @@ var minifycss = require('gulp-minify-css');
 
 function compileHTML() {
   return gulp.src('./src/*.php')
+    .pipe(fileinclude())
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
 }
 function compileCSS() {
@@ -41,9 +44,13 @@ function compileJS() {
 
 
 
-gulp.task('html', ['css', 'js'], function() {
+gulp.task('html', ['inc', 'genericons', 'css', 'js'], function() {
   return compileHTML();
 });
+gulp.task('inc', function() {
+  return gulp.src('./src/assets/inc/*.php')
+    .pipe(gulp.dest('../wp-content/themes/haobao/assets/inc/'))
+})
 gulp.task('css', ['ie-css'], function() {
   return compileCSS();
 });
@@ -54,6 +61,10 @@ gulp.task('ie-css', function() {
 gulp.task('js', function() {
   return compileJS();
 });
+gulp.task('genericons', function() {
+  return gulp.src('./src/assets/genericons/*')
+    .pipe(gulp.dest('../wp-content/themes/haobao/assets/genericons/'))
+})
 
 
 
