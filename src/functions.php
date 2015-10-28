@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Fifteen functions and definitions
+ * haobao functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -21,21 +21,21 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage haobao
+ * @since haobao 1.0
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 if ( ! isset( $content_width ) ) {
 	$content_width = 660;
 }
 
 /**
- * Twenty Fifteen only works in WordPress 4.1 or later.
+ * haobao only works in WordPress 4.1 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.1-alpha', '<' ) ) {
 	require get_template_directory() . '/assets/inc/back-compat.php';
@@ -49,7 +49,7 @@ if ( ! function_exists( 'haobao_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 function haobao_setup() {
 
@@ -84,6 +84,7 @@ function haobao_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu',      'haobao' ),
 		'social'  => __( 'Social Links Menu', 'haobao' ),
+		'secondary' => __( 'Secondary Menu', 'haobao')
 	) );
 
 	/*
@@ -124,7 +125,7 @@ add_action( 'after_setup_theme', 'haobao_setup' );
 /**
  * Register widget area.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
@@ -145,9 +146,9 @@ add_action( 'widgets_init', 'haobao_widgets_init' );
 
 if ( ! function_exists( 'haobao_fonts_url' ) ) :
 /**
- * Register Google fonts for Twenty Fifteen.
+ * Register Google fonts for haobao.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @return string Google fonts URL for the theme.
  */
@@ -212,7 +213,7 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since Twenty Fifteen 1.1
+ * @since haobao 1.1
  */
 function haobao_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -222,7 +223,7 @@ add_action( 'wp_head', 'haobao_javascript_detection', 0 );
 /**
  * Enqueue scripts and styles.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 function haobao_scripts() {
 	// Add custom fonts, used in the main stylesheet.
@@ -266,7 +267,7 @@ add_action( 'wp_enqueue_scripts', 'haobao_scripts' );
 /**
  * Add featured image as background image to post navigation elements.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @see wp_add_inline_style()
  */
@@ -308,7 +309,7 @@ add_action( 'wp_enqueue_scripts', 'haobao_post_nav_background' );
 /**
  * Display descriptions in main navigation.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @param string  $item_output The menu item output.
  * @param WP_Post $item        Menu item object.
@@ -328,7 +329,7 @@ add_filter( 'walker_nav_menu_start_el', 'haobao_nav_description', 10, 4 );
 /**
  * Add a `screen-reader-text` class to the search form's submit button.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @param string $html Search form HTML.
  * @return string Modified search form HTML.
@@ -341,20 +342,20 @@ add_filter( 'get_search_form', 'haobao_search_form_modify' );
 /**
  * Implement the Custom Header feature.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 require get_template_directory() . '/assets/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 require get_template_directory() . '/assets/inc/template-tags.php';
 
 /**
  * Customizer additions.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 require get_template_directory() . '/assets/inc/customizer.php';

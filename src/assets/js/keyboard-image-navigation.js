@@ -1,5 +1,5 @@
 /**
- * Twenty Fifteen keyboard support for image navigation.
+ * haobao keyboard support for image navigation.
  */
 
 ( function( $ ) {

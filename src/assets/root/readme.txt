@@ -1,4 +1,4 @@
-=== Twenty Fifteen ===
+=== haobao ===
 Contributors: the WordPress team
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.3-trunk
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 == Description ==
-Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Our 2015 default theme is clean, blog-focused, and designed for clarity. haobao's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 
 * Mobile-first, Responsive Layout
 * Custom Colors
@@ -18,20 +18,20 @@ Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty 
 * Post Formats
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Twenty Fifteen please go to https://codex.wordpress.org/Twenty_Fifteen.
+For more information about haobao please go to https://codex.wordpress.org/haobao.
 
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Twenty Fifteen in the search form and press the 'Enter' key on your keyboard.
+2. Type in haobao in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://codex.wordpress.org/Twenty_Fifteen for a guide on how to customize this theme.
+4. Go to https://codex.wordpress.org/haobao for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Copyright ==
 
-Twenty Fifteen WordPress Theme, Copyright 2014-2015 WordPress.org & Automattic.com
-Twenty Fifteen is distributed under the terms of the GNU GPL
+haobao WordPress Theme, Copyright 2014-2015 WordPress.org & Automattic.com
+haobao is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Twenty Fifteen Theme bundles the following third-party resources:
+haobao Theme bundles the following third-party resources:
 
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
@@ -58,17 +58,17 @@ Source: http://www.genericons.com
 = 1.3 =
 * Released: August 18, 2015
 
-https://codex.wordpress.org/Twenty_Fifteen_Theme_Changelog#Version_1.3
+https://codex.wordpress.org/haobao_Theme_Changelog#Version_1.3
 
 = 1.2 =
 * Released: May 6, 2015
 
-https://codex.wordpress.org/Twenty_Fifteen_Theme_Changelog#Version_1.2
+https://codex.wordpress.org/haobao_Theme_Changelog#Version_1.2
 
 = 1.1 =
 * Released: April 23, 2015
 
-https://codex.wordpress.org/Twenty_Fifteen_Theme_Changelog#Version_1.1
+https://codex.wordpress.org/haobao_Theme_Changelog#Version_1.1
 
 = 1.0 =
 * Released: December 18, 2014

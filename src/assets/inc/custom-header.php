@@ -1,10 +1,10 @@
 <?php
 /**
- * Custom Header functionality for Twenty Fifteen
+ * Custom Header functionality for haobao
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage haobao
+ * @since haobao 1.0
  */
 
 /**
@@ -17,9 +17,9 @@ function haobao_custom_header_setup() {
 	$default_text_color  = trim( $color_scheme[4], '#' );
 
 	/**
-	 * Filter Twenty Fifteen custom-header support arguments.
+	 * Filter haobao custom-header support arguments.
 	 *
-	 * @since Twenty Fifteen 1.0
+	 * @since haobao 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'haobao_custom_header_setup' );
 /**
  * Convert HEX to RGB.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @param string $color The original color, in 3- or 6-digit hexadecimal form.
  * @return array Array containing RGB (red, green, and blue) values for the given
@@ -71,7 +71,7 @@ if ( ! function_exists( 'haobao_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @see haobao_custom_header_setup()
  */
@@ -188,7 +188,7 @@ endif; // haobao_header_style
 /**
  * Enqueues front-end CSS for the header background color.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  *
  * @see wp_add_inline_style()
  */
@@ -234,7 +234,7 @@ add_action( 'wp_enqueue_scripts', 'haobao_header_background_color_css', 11 );
 /**
  * Enqueues front-end CSS for the sidebar text color.
  *
- * @since Twenty Fifteen 1.0
+ * @since haobao 1.0
  */
 function haobao_sidebar_text_color_css() {
 	$color_scheme       = haobao_get_color_scheme();
