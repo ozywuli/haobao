@@ -44,12 +44,12 @@ function compileJS() {
 
 
 
-gulp.task('html', ['inc', 'genericons', 'css', 'js'], function() {
+gulp.task('html', ['modules', 'css', 'js'], function() {
   return compileHTML();
 });
-gulp.task('inc', function() {
-  return gulp.src('./src/assets/inc/*.php')
-    .pipe(gulp.dest('../wp-content/themes/haobao/assets/inc/'))
+gulp.task('modules', function() {
+  return gulp.src('./src/assets/modules/*')
+    .pipe(gulp.dest('../wp-content/themes/haobao/assets/modules/'))
 })
 gulp.task('css', ['ie-css'], function() {
   return compileCSS();
@@ -61,10 +61,7 @@ gulp.task('ie-css', function() {
 gulp.task('js', function() {
   return compileJS();
 });
-gulp.task('genericons', function() {
-  return gulp.src('./src/assets/genericons/*')
-    .pipe(gulp.dest('../wp-content/themes/haobao/assets/genericons/'))
-})
+
 
 
 
