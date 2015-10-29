@@ -73,9 +73,12 @@ function haobao_wp_excerpt($length_callback = '', $more_callback = '')
 
 // This theme uses wp_nav_menu() in two locations.
 register_nav_menus( array(
-  'primary' => __( 'Primary Menu',      'haobao' ),
+  'pages' => __( 'Pages Menu', 'haobao'),
+  'category' => __( 'Category Menu', 'haobao' ),
   'social'  => __( 'Social Links Menu', 'haobao' )
 ) );
+
+
 
 /**
  * Register widget area.

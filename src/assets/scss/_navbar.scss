@@ -10,7 +10,7 @@
 
   svg {
     position: relative;
-    top: 2px;
+    top: 3px;
     width: auto;
     height: 20px;
   }
@@ -62,8 +62,27 @@
 }
   .navbar__search {
     vertical-align: middle;
-    .search-field {
-      padding: 8px;
+    .search-form {
+      position: relative;
+    }
+    .search-input {
+      border: 1px solid #DDD;
+      padding: 8px 10px;
+      opacity: 0;
+
+      &:focus {
+        opacity: 1;
+      }
+    }
+    .search-submit {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -10px;
+      width: 20px;
+      height: 20px;
+      font-size: 0;
+      opacity: 0;
     }
     svg {
       position: absolute;
@@ -71,6 +90,7 @@
       top: 50%;
       margin-top: -10px;
       fill: #888;
+      pointer-events: none;
     }
   }
 
