@@ -10,7 +10,7 @@
 
   svg {
     position: relative;
-    top: 3px;
+    display: block;
     width: auto;
     height: 20px;
   }
@@ -21,22 +21,20 @@
 .navbar__menu {
   float: left;
   position: relative;
-    &:before {
-      content: "";
-      display: inline-block;
-      vertical-align: middle;
-      height: 100%;
-    }
+  display: table;
 }
 
 .menu-toggle {
-  display: inline-block;
+  float: left;
+  border-right: 1px solid #f1f1f1;
   padding: 10px;
 }
 .sm-links {
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
   li {
     display: inline-block;
+    vertical-align: middle;
     margin-left: 8px;
   }
   svg {
@@ -69,8 +67,9 @@
       border: 1px solid #DDD;
       padding: 8px 10px;
       opacity: 0;
+      transition: all 150ms ease;
 
-      &:focus {
+      &:focus, &:hover {
         opacity: 1;
       }
     }
