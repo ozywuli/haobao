@@ -1,0 +1,14 @@
+.footer {
+  background: $accent;
+  padding: 60px 20px;
+  color: #FFF;
+  text-align: center;
+  text-transform: uppercase;
+
+  a {
+    color: #FFF;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 3px solid #FFF;
+  }
+}

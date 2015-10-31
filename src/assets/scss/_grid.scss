@@ -1,7 +1,7 @@
 .posts-container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 80px 20px 20px 20px;
+  padding: 70px 20px 20px 20px;
 }
 
 .posts {
@@ -12,9 +12,37 @@
   display: inline-block;
   vertical-align: top;
   width: 25%;
-  font-size: 1.5rem;
+  padding: 0 10px 20px 10px;
+  font-size: 1.6rem;
   img {
     width: 100%;
     height: auto;
   }
+  p {
+    margin-bottom: 20px;
+  }
+
+  .single__post & {
+    width: 100%;
+    padding: 0;
+  }
+
 }
+  .post__title {
+    font-size: 1.8rem;
+    text-align: center;
+    a {
+      color: #000;
+
+      &:hover {
+        color: $accent-hover;
+      }
+    }
+  }
+
+
+  .post__meta {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }

@@ -40,7 +40,7 @@
   </div>
  
   <div class="navbar__menu">
-    <a href="#" class="menu-toggle">
+    <a href="#" class="menu-toggle" title="menu toggle">
       <span class="visuallyhidden">menu toggle</span>
         @@include('partials/icons/menu.html')
     </a>
@@ -81,12 +81,9 @@
     <ul class="navbar__utils">
       <li class="navbar__search">
           <?php get_search_form(); ?>
-          <span class="visuallyhidden">Search icon</span>
-          @@include('partials/icons/search.html')
-
       </li>
       <li>
-        <a href="#">
+        <a href="#" title="sigin">
           <span class="visuallyhidden">Gear icon</span>
           @@include('partials/icons/gear.html')
         </a>

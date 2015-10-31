@@ -1,0 +1,17 @@
+.single__post {
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 20px 20px 20px;
+}
+  .single__title {
+    margin-bottom: 20px;
+    font-size: 4.8rem;
+    a {
+      color: #000;
+
+      &:hover {
+        color: $accent-hover;
+      }
+    }
+  }

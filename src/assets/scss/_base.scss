@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   font-family: $sans;
   line-height: 1.5;
+  color: #333;
 }
 
 html {
@@ -10,11 +11,16 @@ html {
 }
 
 body {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 a {
   text-decoration: none;
+  color: $accent;
+
+  &:hover {
+    color: $accent-hover;
+  }
 }
 
 ol, ul, li {
