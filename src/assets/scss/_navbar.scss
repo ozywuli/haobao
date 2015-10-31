@@ -13,13 +13,9 @@
     display: block;
     width: auto;
     height: 20px;
-
     transition: all 150ms ease;
-
-    &:hover {
-      fill: $accent-hover;
-    }
   }
+
 }
 
 

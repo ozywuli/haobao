@@ -23,3 +23,27 @@
       background: #000;
     }
   }
+
+
+
+.pagination-posts {
+
+  font-size: 0;
+
+  div {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    font-size: 1.8rem;
+    a {
+      display: block;
+    }
+  }
+  .next {
+    padding-right: 10px;
+  }
+  .prev {
+    padding-left: 10px;
+  }
+
+}

@@ -19,27 +19,70 @@
       <?php endif; ?>
       <!-- /post thumbnail -->
 
-      <!-- post details -->
-      <span class="date">
-        <time datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i'); ?>">
-          <?php the_date(); ?> <?php the_time(); ?>
-        </time>
-      </span>
-      <span class="author"><?php _e( 'Published by', 'haobao' ); ?> <?php the_author_posts_link(); ?></span>
-      <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'haobao' ), __( '1 Comment', 'haobao' ), __( '% Comments', 'haobao' )); ?></span>
-      <!-- /post details -->
 
-      <?php the_content(); // Dynamic Content ?>
+        <div class="single__content">
 
-      <?php the_tags( __( 'Tags: ', 'haobao' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+        <!-- post details -->
+        <span class="date">
+          <time datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i'); ?>">
+            <?php the_date(); ?> <?php the_time(); ?>
+          </time>
+        </span>
+        <span class="author"><?php _e( 'Published by', 'haobao' ); ?> <?php the_author_posts_link(); ?></span>
+        <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'haobao' ), __( '1 Comment', 'haobao' ), __( '% Comments', 'haobao' )); ?></span>
+        <!-- /post details -->
 
-      <p><?php _e( 'Categorised in: ', 'haobao' ); the_category(', '); // Separated by commas ?></p>
 
-      <p><?php _e( 'This post was written by ', 'haobao' ); the_author(); ?></p>
 
-      <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+        <?php the_content(); // Dynamic Content ?>
 
-      <?php comments_template(); ?>
+        <?php the_tags( __( 'Tags: ', 'haobao' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+
+        <p><?php _e( 'Categorised in: ', 'haobao' ); the_category(', '); // Separated by commas ?></p>
+
+        <p><?php _e( 'By ', 'haobao' ); the_author(); ?></p>
+
+        <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+
+
+        <!-- post pagination -->
+        <div class="pagination-posts">
+
+
+            <div class="next">
+              <a href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>">
+              <?php 
+                $nextPost = get_next_post(true);
+                if ($nextPost) {
+                  $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(150,150) );
+                  echo $nextthumbnail;
+                  echo $nextPost->post_title;
+                }
+              ?>
+              </a>
+
+            </div>
+
+
+
+          <div class="prev">
+
+            <a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>">
+            <?php
+            $prevPost = get_previous_post(true);
+            if ($prevPost) {
+              $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(150,150) );
+              echo $prevthumbnail;
+              echo $prevPost->post_title;
+            }
+            ?>
+            </a>
+
+          </div>
+
+        </div><!-- /post pagination -->
+
+      </div>
 
     </article>
     <!-- /article -->
@@ -55,6 +98,7 @@
 
     </article>
     <!-- /article -->
+
 
   <?php endif; ?>
 </div>
