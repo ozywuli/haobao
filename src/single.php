@@ -42,7 +42,41 @@
 
         <p><?php _e( 'By ', 'haobao' ); the_author(); ?></p>
 
-        <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+
+<?php
+  $author = get_the_author();
+  $authorLink = the_author_link();
+  $authorPage = the_author_posts_link();
+  $authorGravatar = get_avatar( get_the_author_meta('email') , 90 );
+  $authorDescription = get_the_author_meta('description');
+?>
+
+<div class="single__author">
+  <?php echo $authorGravatar ?>
+  <h3><?php echo $author ?></h3>
+  <p><?php echo $authorDescription ?></p>
+</div>
+
+
+
+        <!-- post pagination arrows -->
+        <?php
+        $nextPost = get_next_post();
+        if (!empty( $nextPost )): ?>
+          <nav class="pagination-arrow pagination-arrow--next">
+            <a href="<?php echo get_permalink( $nextPost->ID ); ?>"><?php echo $nextPost->post_title; ?></a>
+          </nav>
+        <?php endif; ?>
+
+        <?php
+        $prevPost = get_previous_post();
+        if (!empty( $prevPost )): ?>
+          <nav class="pagination-arrow pagination-arrow--prev">
+            <a href="<?php echo get_permalink( $prevPost->ID ); ?>"><?php echo $prevPost->post_title; ?></a>
+          </nav>
+        <?php endif; ?>
+
+        <!-- /post pagination arrows -->
 
 
         <!-- post pagination -->
@@ -102,6 +136,10 @@
 
   <?php endif; ?>
 </div>
+
+<?php
+  add_filter( 'rp4wp_append_content', '__return_false' );
+?>
 
 
 <?php get_sidebar(); ?>

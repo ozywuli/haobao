@@ -19,3 +19,36 @@
   .single__content {
     padding: 20px;
   }
+
+
+
+
+.rp4wp-related-posts {
+  margin: 20px 0;
+}
+
+.rp4wp-related-posts ul {
+  margin-right: -20px;
+  font-size: 0;
+
+  a {
+    color: #000;
+    &:hover {
+      color: $accent-hover;
+    }
+  }
+}
+.rp4wp-related-posts ul>li{
+  display: inline-block;
+  vertical-align: top;
+  width: 33.33%;
+  padding-right: 20px;
+  font-size: 1.4rem;
+}
+.rp4wp-related-posts ul>li>p{
+  margin:0;
+  padding:0;
+}
+.rp4wp-related-post-image{
+  width: 100%;
+}

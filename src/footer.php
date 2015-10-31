@@ -1,3 +1,5 @@
+
+
       <!-- footer -->
       <footer class="footer" role="contentinfo">
 
@@ -15,6 +17,8 @@
     <!-- /wrapper -->
 
     <?php wp_footer(); ?>
+
+
 
     <!-- analytics -->
     <script>
