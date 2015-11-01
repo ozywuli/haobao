@@ -9,23 +9,27 @@ query_posts('cat=5');
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
   <!-- article -->
-  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
     <!-- post thumbnail -->
-    <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-        <?php the_post_thumbnail(array(400,400)); // Declare pixel size you need inside the array ?>
-      </a>
-    <?php endif; ?>
+      <?php if (has_post_thumbnail( $post->ID ) ): ?>
+      <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+      <div class="posts-featured__bg" style="background-image: url('<?php echo $image[0]; ?>')">
+      </div>
+      <?php endif; ?>
     <!-- /post thumbnail -->
+
+    <!-- post overlay -->
+    <div class="posts-featured__overlay"></div>
+    <!-- /post overlay -->
 
     <!-- post title -->
     <h2 class="post__title">
-      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+      <?php the_title(); ?>
     </h2>
     <!-- /post title -->
 
-
+    </a>
   </article>
   <!-- /article -->
 
@@ -45,7 +49,12 @@ query_posts('cat=5');
 
 <!-- posts -->
 
+<header class="posts--all">
+  <h2>The Feed</h2>
+</header>
+
 <main class="posts-container">
+
   <section class="posts">
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>

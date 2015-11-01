@@ -95,7 +95,12 @@
         $nextPost = get_next_post();
         if (!empty( $nextPost )): ?>
           <nav class="pagination-arrow pagination-arrow--next">
-            <a href="<?php echo get_permalink( $nextPost->ID ); ?>"><?php echo $nextPost->post_title; ?></a>
+            <a href="<?php echo get_permalink( $nextPost->ID ); ?>">
+              <div class="pagination-arrow__title">
+                <?php echo $nextPost->post_title; ?>
+              </div>
+              @@include('partials/icons/arrow_left.svg')
+            </a>
           </nav>
         <?php endif; ?>
 
@@ -103,7 +108,12 @@
         $prevPost = get_previous_post();
         if (!empty( $prevPost )): ?>
           <nav class="pagination-arrow pagination-arrow--prev">
-            <a href="<?php echo get_permalink( $prevPost->ID ); ?>"><?php echo $prevPost->post_title; ?></a>
+            <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
+              @@include('partials/icons/arrow_right.svg')
+              <div class="pagination-arrow__title">
+                <?php echo $prevPost->post_title; ?>
+              </div>
+            </a>
           </nav>
         <?php endif; ?>
 
