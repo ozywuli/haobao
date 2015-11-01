@@ -13,8 +13,34 @@
       <h2><?php echo get_the_author() ; ?></h2>
 
       <div class="author-page__content">
-        <?php echo wpautop( get_the_author_meta('description') ); ?>
+        <p><?php echo wpautop( get_the_author_meta('description') ); ?></p>
       </div>
+
+
+          <?php
+            if ( get_the_author_meta('url') ):
+          ?>
+            <div class="author-links">
+              <ul class="author-links__sm">
+              <?php
+                if ( get_the_author_meta('facebook_profile') ):
+              ?>
+                <li>
+                  <a href="<?php the_author_meta('twitter_profile') ?>">@@include('partials/icons/twitter.html')</a>
+                </li>
+              <?php endif; ?>
+              <?php
+                if ( get_the_author_meta('facebook_profile') ):
+              ?>
+                   <li>
+                      <a href="<?php the_author_meta('facebook_profile') ?>">@@include('partials/icons/facebook.html')</a>
+                    </li>
+              <?php endif; ?>
+              </ul>
+              <a href="<?php the_author_meta( 'user_url' ) ?>"><?php the_author_meta( 'user_url' ) ?></a>
+            </div>
+          <?php endif; ?>
+
 
     </div>
 
