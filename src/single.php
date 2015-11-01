@@ -92,24 +92,28 @@
 
         <!-- post pagination arrows -->
         <?php
-        $nextPost = get_next_post();
-        if (!empty( $nextPost )): ?>
+        $nextPost = get_next_post(true);
+        if ( ( $nextPost )): ?>
           <nav class="pagination-arrow pagination-arrow--next">
             <a href="<?php echo get_permalink( $nextPost->ID ); ?>">
               <div class="pagination-arrow__title">
                 <?php echo $nextPost->post_title; ?>
               </div>
-              @@include('partials/icons/arrow_left.svg')
+              <div class="pagination-arrow__icon">
+                @@include('partials/icons/arrow_left.svg')
+              </div>
             </a>
           </nav>
         <?php endif; ?>
 
         <?php
-        $prevPost = get_previous_post();
-        if (!empty( $prevPost )): ?>
+        $prevPost = get_previous_post(true);
+        if ( ( $prevPost )): ?>
           <nav class="pagination-arrow pagination-arrow--prev">
             <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
-              @@include('partials/icons/arrow_right.svg')
+              <div class="pagination-arrow__icon">
+                @@include('partials/icons/arrow_right.svg')
+              </div>
               <div class="pagination-arrow__title">
                 <?php echo $prevPost->post_title; ?>
               </div>

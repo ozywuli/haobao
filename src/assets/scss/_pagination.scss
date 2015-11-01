@@ -54,54 +54,64 @@
   position: fixed;
   top: 50%;
   margin-top: -35px;
-  background: #f8f8f8;
-  border: 1px solid #f1f1f1;
-  transition: all 150ms ease;
-
 
   a {
-    display: table;
-    max-width: 250px;
+    display: block;
+    background: #f8f8f8;
+    border: 1px solid #f1f1f1;
     color: #000;
-    padding: 10px;
     font-size: 1.4rem;
     font-weight: bold;
   }
 
   svg {
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
     width: 25px;
     height: auto;
   }
 
 }
+
+
+  .pagination-arrow__icon {
+    position: relative;
+    padding: 10px;
+    background: #f8f8f8;
+    z-index: 1;
+  }
+
   .pagination-arrow--next {
-    left: -185px;
+    left: 0;
     border-radius: 0 5px 5px 0;
-
-    &:hover {
-      left: 0;
-    }
-
   }
   .pagination-arrow--prev {
-    right: -185px;
+    right: 0;
     border-radius: 5px 0 0 5px;
-
-    &:hover {
-      right: 0;
-    }
-
   }
   .pagination-arrow__title {
-    display: table-cell;
-    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    background: #f8f8f8;
+    padding: 10px;
+    width: 150px;
+    height: 100%;
 
     .pagination-arrow--next & {
-      padding-right: 15px;
+      left: -500px;
+      border: 1px solid #f1f1f1;
+      border-radius: 0 5px 5px 0;
     }
     .pagination-arrow--prev & {
-      padding-left: 15px;
+      right: -500px;
+      border: 1px solid #f1f1f1;
+      border-radius: 5px 0 0 5px;
     }
+
+    .pagination-arrow--next:hover & {
+      left: 45px;
+    }
+    .pagination-arrow--prev:hover & {
+      right: 45px;
+    }
+
   }
