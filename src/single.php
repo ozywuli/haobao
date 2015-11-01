@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
   <div class="single__post">
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -33,29 +34,60 @@
         <!-- /post details -->
 
 
-
-        <?php the_content(); // Dynamic Content ?>
-
         <?php the_tags( __( 'Tags: ', 'haobao' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
         <p><?php _e( 'Categorised in: ', 'haobao' ); the_category(', '); // Separated by commas ?></p>
 
-        <p><?php _e( 'By ', 'haobao' ); the_author(); ?></p>
+
+        <!-- main content -->
+        <?php the_content(); // Dynamic Content ?>
+        <!-- main content -->
 
 
-<?php
-  $author = get_the_author();
-  $authorLink = the_author_link();
-  $authorPage = the_author_posts_link();
-  $authorGravatar = get_avatar( get_the_author_meta('email') , 90 );
-  $authorDescription = get_the_author_meta('description');
-?>
 
-<div class="single__author">
-  <?php echo $authorGravatar ?>
-  <h3><?php echo $author ?></h3>
-  <p><?php echo $authorDescription ?></p>
-</div>
+        <!-- author info -->
+        <?php
+          $author = get_the_author();
+          $authorGravatar = get_avatar( get_the_author_meta('email') , 90 );
+          $authorDescription = get_the_author_meta('description');
+        ?>
+
+        <div class="single__author">
+          <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+            <?php echo $authorGravatar ?>
+          </a>
+          <h3>
+            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+               <?php echo $author ?>
+            </a>
+          </h3>
+          <p><?php echo $authorDescription ?></p>
+          <?php
+            if ( get_the_author_meta('url') ):
+          ?>
+            <div class="author-links">
+              <ul class="author-links__sm">
+              <?php
+                if ( get_the_author_meta('facebook_profile') ):
+              ?>
+                <li>
+                  <a href="<?php the_author_meta('twitter_profile') ?>">@@include('partials/icons/twitter.html')</a>
+                </li>
+              <?php endif; ?>
+              <?php
+                if ( get_the_author_meta('facebook_profile') ):
+              ?>
+                   <li>
+                      <a href="<?php the_author_meta('facebook_profile') ?>">@@include('partials/icons/facebook.html')</a>
+                    </li>
+              <?php endif; ?>
+              </ul>
+              <a href="<?php the_author_meta( 'user_url' ) ?>"><?php the_author_meta( 'user_url' ) ?></a>
+            </div>
+          <?php endif; ?>
+
+        </div>
+        <!-- /author info -->
 
 
 

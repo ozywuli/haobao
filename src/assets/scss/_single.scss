@@ -21,6 +21,65 @@
   }
 
 
+  .single__author {
+    position: relative;
+    margin: 60px 0;
+    border-top: 1px solid #ddd;
+    padding-top: 60px;
+    a:hover img {
+      opacity: 1;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -50px;
+      display: block;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      padding: 5px;
+      background: #FFF;
+      width: 100px;
+      height: 100px;
+
+    }
+    h3 {
+      text-align: center;
+      a {
+        color: #000;
+        &:hover {
+          color: $accent-hover;
+        }
+      }
+    }
+  }
+    .author-links {
+      text-align: center;
+
+      svg {
+        display: block;
+        width: 15px;
+        height: 15px;
+        path {
+          fill: #FFF;
+        }
+      }
+    }
+      .author-links__sm {
+        li {
+          display: inline-block;
+          margin-right: 3px
+        }
+        a {
+          display: inline-block;
+          border-radius: 50%;
+          padding: 8px;
+          background: #000;
+        }
+      }
+
+
 
 
 .rp4wp-related-posts {
