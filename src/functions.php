@@ -1,6 +1,8 @@
 <?php
 
 
+// Add featured image upload to post editor
+add_theme_support( 'post-thumbnails' );
 
 
 

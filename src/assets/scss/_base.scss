@@ -33,3 +33,56 @@ p {
 ol, ul, li {
   list-style: none;
 }
+
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 2rem 0 2rem -2.2rem;
+  padding: 0 0 0 2rem;
+  border-left: $primary 0.5rem solid;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+.content-col ul {
+  margin-bottom: 2rem;
+  ul {
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+  }
+  ol {
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+  }
+  li {
+      list-style-type: disc;
+      list-style-position: outside;
+  }
+}
+.content-col ol {
+  margin-bottom: 2rem;
+  ul {
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+  }
+  ol {
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+  }
+  li {
+      list-style-type: decimal;
+      list-style-position: outside;
+  }
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+}
