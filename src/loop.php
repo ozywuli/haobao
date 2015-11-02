@@ -56,7 +56,7 @@ $do_not_duplicate = $post->ID; ?>
     <!-- post thumbnail -->
     <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
       <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-        <?php the_post_thumbnail(array(400,400)); // Declare pixel size you need inside the array ?>
+        <?php the_post_thumbnail(array(400,225)); // Declare pixel size you need inside the array ?>
       </a>
     <?php endif; ?>
     <!-- /post thumbnail -->

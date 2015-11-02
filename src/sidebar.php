@@ -8,7 +8,7 @@
  */
 
 if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar( 'sidebar-1' )  ) : ?>
-  <div class="sidebar">
+  <div class="sidebar menu">
 
     <?php if( has_nav_menu( 'pages' ) ) : ?>
       <nav class="sidebar__nav">
