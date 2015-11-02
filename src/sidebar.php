@@ -57,3 +57,16 @@ if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar(
   </div><!-- /sidebar -->
 
 <?php endif; ?>
+
+
+
+<div class="sidebar stories">
+    <h2>Recent Stories</h2>
+<?php $sidebar_query = new WP_Query( 'posts_per_page=5' );
+while ( $sidebar_query->have_posts() ) : $sidebar_query->the_post(); ?>
+    <h2 class="post__title">
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    </h2>
+<?php endwhile; ?>
+
+</div>

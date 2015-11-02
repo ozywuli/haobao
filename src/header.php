@@ -83,9 +83,9 @@
           <?php get_search_form(); ?>
       </li>
       <li>
-        <a href="#" title="sigin">
-          <span class="visuallyhidden">Gear icon</span>
-          @@include('partials/icons/gear.html')
+        <a href="#" title="stories" class="stories-toggle">
+          <span class="visuallyhidden">Stories</span>
+          @@include('partials/icons/reading.svg')
         </a>
       </li>
     </ul>

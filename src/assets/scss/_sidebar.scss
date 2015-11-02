@@ -1,7 +1,6 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
   padding: 100px 0 20px 0;
   width: 100%;
@@ -10,12 +9,11 @@
   height: 100vh;
   background: #FFF;
   background: rgba(255, 255, 255, 0.97);
-  border-right: 1px solid #f1f1f1;
+
   overflow-y: auto;
   @include z-index('menu');
   transition: all 150ms ease;
 
-  transform: translate3d(-100%, 0, 0);
   opacity: 0;
   visibility: visible;
 
@@ -42,7 +40,25 @@
   .sidebar__nav {
     margin-bottom: 20px;
   }
-  .sidebar--revealed {
+
+
+.menu {
+  transform: translate3d(-100%, 0, 0);
+  left: 0;
+  border-right: 1px solid #f1f1f1;
+}
+  .menu--revealed {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+.stories {
+  transform: translate3d(100%, 0, 0);
+  right: 0;
+  border-left: 1px solid #f1f1f1;
+}
+  .stories--revealed {
     transform: translate3d(0, 0, 0);
     opacity: 1;
     visibility: visible;

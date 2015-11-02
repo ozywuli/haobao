@@ -13,16 +13,27 @@
     display: block;
     width: auto;
     height: 20px;
-    transition: all 150ms ease;
     fill: $primary;
     pointer-events: none;
+
   }
   path {
-    fill: $primary;
+
     pointer-events: none;
   }
   g {
     pointer-events: none;
+  }
+
+  a:active {
+    svg {
+      top: 3px;
+    }
+  }
+  a:hover {
+    svg {
+      fill: $accent-hover;
+    }
   }
 
 }
@@ -104,7 +115,8 @@
       position: absolute;
       right: 8px;
       top: 50%;
-      margin-top: -10px;
+      margin-top: -8px;
+      height: 16px;
       pointer-events: none;
       background: #FFF;
     }
