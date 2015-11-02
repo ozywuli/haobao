@@ -5,7 +5,7 @@
 }
   .page-numbers {
     display: inline-block;
-    background: #000;
+    background: $primary;
     color: #FFF;
     line-height: 0;
     padding: 15px 10px;
@@ -27,7 +27,7 @@
 
 
 .pagination-posts {
-
+  margin-bottom: 40px;
   font-size: 0;
 
   div {

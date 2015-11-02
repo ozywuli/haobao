@@ -38,11 +38,13 @@ $do_not_duplicate = $post->ID; ?>
 
 <!-- posts -->
 
+
+
+<main class="posts-container">
+
 <header class="posts--all">
   <h2>The Stack</h2>
 </header>
-
-<main class="posts-container">
 
   <section class="posts">
 

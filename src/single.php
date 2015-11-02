@@ -20,7 +20,7 @@
       <?php endif; ?>
       <!-- /post thumbnail -->
 
-
+        <!-- single content -->
         <div class="single__content">
 
         <!-- post details -->
@@ -161,7 +161,11 @@
 
         </div><!-- /post pagination -->
 
-      </div>
+        <!-- comments -->
+        <?php comments_template(); ?>
+        <!-- comments -->
+
+      </div><!-- /single content -->
 
     </article>
     <!-- /article -->
