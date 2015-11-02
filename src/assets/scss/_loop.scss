@@ -1,7 +1,7 @@
 .posts-container {
   max-width: 1260px;
   margin: 0 auto;
-  padding: 70px 20px 20px 20px;
+  padding: 20px 10px;
 }
 
 .posts {
@@ -16,7 +16,7 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 33.33%;
+  width: 25%;
   padding: 0 10px 20px 10px;
   font-size: 1.6rem;
   img {
@@ -35,7 +35,6 @@
 }
   .post__title {
     font-size: 1.8rem;
-    text-align: center;
     a {
       color: #000;
 
@@ -96,7 +95,20 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: $accent;
-    opacity: 0.3;
+    background: #333;
+    opacity: 0.5;
+
+    a:hover & {
+      background: $accent-hover;
+    }
+  }
+
+
+
+  .posts--all {
+    max-width: 1260px;
+    margin: 20px auto;
+    padding: 0 20px;
+    border-bottom: 3px solid #333;
   }
 

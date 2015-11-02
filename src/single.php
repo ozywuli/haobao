@@ -133,7 +133,7 @@
               <?php 
                 $nextPost = get_next_post(true);
                 if ($nextPost) {
-                  $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(150,150) );
+                  $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(400,225) );
                   echo $nextthumbnail;
                   echo $nextPost->post_title;
                 }
@@ -150,7 +150,7 @@
             <?php
             $prevPost = get_previous_post(true);
             if ($prevPost) {
-              $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(150,150) );
+              $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(400,225) );
               echo $prevthumbnail;
               echo $prevPost->post_title;
             }
@@ -182,9 +182,16 @@
   <?php endif; ?>
 </div>
 
+
+
 <?php
-  add_filter( 'rp4wp_append_content', '__return_false' );
+function rp4wp_example_my_thumbnail_size( $thumb_size ) {
+  return 'my-thumbnail-size';
+}
+add_filter( 'rp4wp_thumbnail_size', 'rp4wp_example_my_thumbnail_size' );
 ?>
+
+
 
 
 <?php get_sidebar(); ?>

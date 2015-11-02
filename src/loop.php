@@ -1,12 +1,9 @@
-<!-- featured posts -->
 <header class="posts-featured">
 
-<?php
-query_posts('cat=5');
-?>
+<?php $my_query = new WP_Query( 'category_name=Featured&posts_per_page=3' );
+while ( $my_query->have_posts() ) : $my_query->the_post();
+$do_not_duplicate = $post->ID; ?>
 
-
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
   <!-- article -->
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
@@ -34,23 +31,15 @@ query_posts('cat=5');
   <!-- /article -->
 
 <?php endwhile; ?>
-
-
-<?php endif; ?>
 </header><!-- /featured posts -->
 
-
-
-<?php rewind_posts(); ?>
-
-<?php query_posts(''); ?>
 
 
 
 <!-- posts -->
 
 <header class="posts--all">
-  <h2>The Feed</h2>
+  <h2>The Stack</h2>
 </header>
 
 <main class="posts-container">
