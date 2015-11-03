@@ -66,20 +66,23 @@
           ?>
             <div class="author-links">
               <ul class="author-links__sm">
+
+
               <?php
-                if ( get_the_author_meta('facebook_profile') ):
+                $sm = array("twitter", "facebook", "instagram", "google", "tumblr");
               ?>
-                <li>
-                  <a href="<?php the_author_meta('twitter_profile') ?>">@@include('partials/icons/twitter.html')</a>
-                </li>
-              <?php endif; ?>
-              <?php
-                if ( get_the_author_meta('facebook_profile') ):
-              ?>
-                   <li>
-                      <a href="<?php the_author_meta('facebook_profile') ?>">@@include('partials/icons/facebook.html')</a>
-                    </li>
-              <?php endif; ?>
+
+              <?php foreach ($sm as $name) { ?>
+                <?php if ( get_the_author_meta($name.'_profile') ): ?>
+                  <li>
+                    <a href="<?php the_author_meta($name.'_profile') ?>" title="<?php echo $name ?>"><?php  get_template_part('assets/icons/inline', $name.'.svg'); ?></a>
+                  </li>
+                <?php endif; ?>
+                  
+              <?php } ?>
+
+
+
               </ul>
               <a href="<?php the_author_meta( 'user_url' ) ?>"><?php the_author_meta( 'user_url' ) ?></a>
             </div>

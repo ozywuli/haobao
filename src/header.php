@@ -46,31 +46,31 @@
     </a>
     <ul class="sm-links">
       <li>
-        <a href="#">
+        <a href="#" class="sm-twitter">
           <span class="visuallyhidden">Twitter icon</span>
            @@include('partials/icons/twitter.html')
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="sm-facebook">
           <span class="visuallyhidden">Facebook icon</span>
            @@include('partials/icons/facebook.html')
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="sm-instagram">
           <span class="visuallyhidden">Instagram icon</span>
            @@include('partials/icons/instagram.html')
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="sm-google">
           <span class="visuallyhidden">Google icon</span>
            @@include('partials/icons/google.html')
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="sm-tumblr">
           <span class="visuallyhidden">Tumblr icon</span>
            @@include('partials/icons/tumblr.html')
         </a>

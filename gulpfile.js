@@ -39,28 +39,27 @@ function compileJS() {
   return gulp.src('./src/assets/js/*.js')
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/js'));
 }
+function compileICONS() {
+    return gulp.src('./src/assets/icons/*.php')
+    .pipe(gulp.dest('../wp-content/themes/haobao/assets/icons'));
+}
 
 
 
 
 
-gulp.task('html', ['modules', 'css', 'js'], function() {
+gulp.task('html', ['icons', 'css', 'js'], function() {
   return compileHTML();
 });
-gulp.task('modules', function() {
-  return gulp.src('./src/assets/modules/*')
-    .pipe(gulp.dest('../wp-content/themes/haobao/assets/modules/'))
-})
-gulp.task('css', ['ie-css'], function() {
+gulp.task('css', function() {
   return compileCSS();
-});
-gulp.task('ie-css', function() {
-  return gulp.src('./src/assets/css/*.css')
-    .pipe(gulp.dest('../wp-content/themes/haobao/assets/css/'))
 });
 gulp.task('js', function() {
   return compileJS();
 });
+gulp.task('icons', function() {
+  return compileICONS();
+})
 
 
 
@@ -93,5 +92,5 @@ function watchTask(error) {
 
 
 
-gulp.task('watch', ['html', 'css', 'js'], watchTask);
+gulp.task('watch', ['html', 'css', 'js', 'icons'], watchTask);
 gulp.task('default', ['watch']);

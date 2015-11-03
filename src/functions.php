@@ -119,6 +119,7 @@ function add_to_author_profile( $contactmethods ) {
         $contactmethods['twitter_profile'] = 'Twitter Profile URL';
         $contactmethods['facebook_profile'] = 'Facebook Profile URL';
         $contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
+        $contactmethods['tumblr_profile'] = 'Tumblr Profile URL';
        
         return $contactmethods;
 }
