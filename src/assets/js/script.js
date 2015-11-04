@@ -2,6 +2,7 @@
 "use strict";
 
 $(function () {
+
 // DOM ready, take it away
 var $menuToggle = $('.menu-toggle');
 var $menu = $('.menu');
@@ -9,43 +10,36 @@ var $menu = $('.menu');
 var $storiesToggle = $('.stories-toggle');
 var $stories = $('.stories');
 
-$menuToggle.on('click', function(e) {
-  e.preventDefault();
-  $menu.toggleClass('menu--revealed');
 
-});
-
-$storiesToggle.on('click', function(e) {
-  e.preventDefault();
-  $stories.toggleClass('stories--revealed');
-})
+toggleReveal($menuToggle, $menu);
+toggleReveal($storiesToggle, $stories);
 
 
-$('body').on('click', function(e) {
-  if ( 
-    $menu.hasClass('menu--revealed') &&
-    !$menuToggle.is(e.target) && 
-    !$menuToggle.find('*').is(e.target) && 
-    !$menu.is(e.target) && 
-    !$menu.find('*').is(e.target) 
-  ) {
-    $menu.removeClass('menu--revealed');
-  }
+function toggleReveal(toggle, target) {
+  var hiddenTarget = true;
+  var targetRevealed = target.attr('class') + '--revealed';
 
-  if ( 
-    $stories.hasClass('stories--revealed') &&
-    !$storiesToggle.is(e.target) && 
-    !$storiesToggle.find('*').is(e.target) && 
-    !$stories.is(e.target) && 
-    !$stories.find('*').is(e.target) 
-  ) {
-    $stories.removeClass('stories--revealed');
-  }
+  toggle.on('click', function(e) {
+    e.preventDefault();
+    target.toggleClass(targetRevealed);
+    hiddenTarget = false;
+  });
+
+  target.on('click', function(e) {
+    hiddenTarget = false;
+  });
+
+  $('html').on('click', function() {
+    if (hiddenTarget) {
+      target.removeClass(targetRevealed);
+    }
+    hiddenTarget = true;
+  })
+
+} // end toggleReveal
 
 
 
-})
-
-});
+}); // end document ready
 
 } ( this, jQuery ));
