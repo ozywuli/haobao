@@ -4,6 +4,40 @@
   margin: 0 auto;
   padding: 70px 0 0 0;
 }
+  .single__categories {
+    margin-bottom: 20px;
+    li {
+      display: inline-block;
+    }
+    a {
+      display: block;
+      border: 1px solid $primary;
+      color: $primary;
+      text-transform: uppercase;
+      line-height: 1;
+      padding: 5px 10px;
+      font-size: 1.4rem
+    }
+  }
+  .single__details {
+    margin-bottom: 20px;
+    
+  }
+    .single__byline {
+      font-style: italic;
+    }
+    .single__date {
+      font-size: 1.4rem;
+      color: #ddd;
+      svg {
+        position: relative;
+        top: 2px;
+        margin-right: 4px;
+        width: auto;
+        height: 1.4rem;
+        fill: #ddd;
+      }
+    }
   .single__title {
     margin-bottom: 20px;
     font-size: 4.8rem;

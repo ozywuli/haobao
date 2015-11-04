@@ -2,17 +2,32 @@
 
 
   <div class="single__post">
-  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+  <?php if ( have_posts() ): while (have_posts()) : the_post(); ?>
 
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+      <div class="single__categories"><?php the_category(); ?></div>
 
       <!-- post title -->
       <h1 class="single__title">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+        <?php the_title(); ?>
       </h1>
       <!-- /post title -->
+
+      <!-- post details -->
+      <div class="single__details">
+        <span class="single__byline">by <?php the_author_posts_link(); ?></span>
+
+        <div class="single__date">
+          @@include('partials/icons/calendar.svg')
+          <time datetime="<?php the_time('d M Y'); ?>">
+            <?php the_time('d F Y'); ?>
+          </time>
+        </div>
+      </div>
+      
+      <!-- /post details -->
 
       <!-- post thumbnail -->
       <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
@@ -20,29 +35,25 @@
       <?php endif; ?>
       <!-- /post thumbnail -->
 
+
         <!-- single content -->
         <div class="single__content">
-
-        <!-- post details -->
-        <span class="date">
-          <time datetime="<?php the_time('d M Y'); ?>">
-            <?php the_time('d F Y'); ?>
-          </time>
-        </span>
-        <span class="author"><?php _e( '', 'haobao' ); ?> <?php the_author_posts_link(); ?></span>
-        <!-- /post details -->
-
-
-        <?php the_tags( __( 'Tags: ', 'haobao' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
-        <p><?php _e( 'Categorised in: ', 'haobao' ); the_category(', '); // Separated by commas ?></p>
 
 
         <!-- main content -->
         <?php the_content(); // Dynamic Content ?>
         <!-- main content -->
 
-
+        <!-- tags -->
+        <?php
+        $posttags = get_the_tags();
+        if ($posttags) :
+          foreach($posttags as $tag) :
+        ?>
+        <a href="<?php echo get_tag_link($tag->term_id); ?>">#<?php echo $tag->name ?></a>
+        <?php endforeach; ?>
+        <?php endif; ?>
+        <!-- /tags -->
 
         <!-- author info -->
         <?php
@@ -95,7 +106,7 @@
 
         <!-- post pagination arrows -->
         <?php
-        $nextPost = get_next_post(true);
+        $nextPost = get_next_post();
         if ( ( $nextPost )): ?>
           <nav class="pagination-arrow pagination-arrow--next">
             <a href="<?php echo get_permalink( $nextPost->ID ); ?>">
@@ -110,7 +121,7 @@
         <?php endif; ?>
 
         <?php
-        $prevPost = get_previous_post(true);
+        $prevPost = get_previous_post();
         if ( ( $prevPost )): ?>
           <nav class="pagination-arrow pagination-arrow--prev">
             <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
@@ -134,7 +145,7 @@
             <div class="next">
               <a href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>">
               <?php 
-                $nextPost = get_next_post(true);
+                $nextPost = get_next_post();
                 if ($nextPost) {
                   $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(400,225) );
                   echo $nextthumbnail;
@@ -151,7 +162,7 @@
 
             <a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>">
             <?php
-            $prevPost = get_previous_post(true);
+            $prevPost = get_previous_post();
             if ($prevPost) {
               $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(400,225) );
               echo $prevthumbnail;
