@@ -1,8 +1,8 @@
 .single__post {
-  width: 780px;
+  width: 100%;
   max-width: 780px;
   margin: 0 auto;
-  padding: 70px 0 0 0;
+  padding: 70px 20px 20px 20px;
 }
   .single__categories {
     margin-bottom: 20px;
@@ -67,6 +67,10 @@
 
     a {
       margin-right: 10px;
+      color: #ddd;
+      &:hover {
+        color: $accent-hover;
+      }
     }
   }
 
@@ -111,16 +115,9 @@
       text-align: center;
       font-size: 1.4rem;
 
-      svg {
-        display: block;
-        width: 15px;
-        height: 15px;
-        path {
-          fill: #FFF;
-        }
-      }
     }
       .author-links__sm {
+        margin: 10px;
         li {
           display: inline-block;
           margin-right: 3px
@@ -130,6 +127,36 @@
           border-radius: 50%;
           padding: 8px;
           background: #000;
+        }
+        svg {
+          display: block;
+          width: 15px;
+          height: 15px;
+          path {
+            fill: #FFF;
+          }
+        }
+      }
+      .author-links__url {
+        color: #ddd;
+        font-weight: bold;
+        &:hover {
+          color: $accent-hover;
+          svg {
+            fill: $accent-hover;
+          }
+        }
+        svg {
+          display: inline-block;
+          vertical-align: middle;
+          width: auto;
+          height: 15px;
+          fill: #ddd;
+          margin-right: 3px;
+        }
+        span {
+          display: inline-block;
+          vertical-align: middle;
         }
       }
 

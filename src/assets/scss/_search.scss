@@ -1,0 +1,18 @@
+.posts--search {
+  h2 {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  svg {
+    display: inline-block;
+    height: 3.5rem;
+    fill: #333;
+  }
+}
+
+.search__results {
+  margin: 0 10px 20px 10px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  text-transform: uppercase;
+}

@@ -26,14 +26,14 @@
                 if ( get_the_author_meta('facebook_profile') ):
               ?>
                 <li>
-                  <a href="<?php the_author_meta('twitter_profile') ?>">@@include('partials/icons/twitter.html')</a>
+                  <a href="<?php the_author_meta('twitter_profile') ?>">@@include('partials/icons/twitter.svg')</a>
                 </li>
               <?php endif; ?>
               <?php
                 if ( get_the_author_meta('facebook_profile') ):
               ?>
                    <li>
-                      <a href="<?php the_author_meta('facebook_profile') ?>">@@include('partials/icons/facebook.html')</a>
+                      <a href="<?php the_author_meta('facebook_profile') ?>">@@include('partials/icons/facebook.svg')</a>
                     </li>
               <?php endif; ?>
               </ul>

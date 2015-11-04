@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<main class="posts-container">
+<main class="posts-container posts-container--cat">
 
 <header class="posts--all">
-  <h2>The Stack</h2>
+  <h2><?php single_cat_title(); ?></h2>
 </header>
 
   <section class="posts">

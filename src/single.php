@@ -80,9 +80,11 @@
             if ( get_the_author_meta('url') ):
           ?>
             <div class="author-links">
+              <a href="<?php the_author_meta( 'user_url' ) ?>" class="author-links__url">
+                @@include('partials/icons/link.svg')
+                <span><?php the_author_meta( 'user_url' ) ?></span>
+              </a>
               <ul class="author-links__sm">
-
-
               <?php
                 $sm = array("twitter", "facebook", "instagram", "google", "tumblr");
               ?>
@@ -99,7 +101,7 @@
 
 
               </ul>
-              <a href="<?php the_author_meta( 'user_url' ) ?>"><?php the_author_meta( 'user_url' ) ?></a>
+
             </div>
           <?php endif; ?>
 
