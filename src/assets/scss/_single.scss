@@ -24,6 +24,7 @@
     
   }
     .single__byline {
+      margin-bottom: 10px;
       font-style: italic;
     }
     .single__date {
@@ -50,15 +51,28 @@
     }
   }
 
+  .single__featuredimg {
+    margin-bottom: 20px;
+  }
+
   .single__content {
     max-width: 700px;
     margin: 0 auto;
   }
 
+  .single__tags {
+    margin: 40px 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    a {
+      margin-right: 10px;
+    }
+  }
 
   .single__author {
     position: relative;
-    margin: 60px 0;
+    margin: 80px 0 60px 0;
     border-top: 1px solid #ddd;
     padding-top: 60px;
     a:hover img {
@@ -95,6 +109,7 @@
   }
     .author-links {
       text-align: center;
+      font-size: 1.4rem;
 
       svg {
         display: block;

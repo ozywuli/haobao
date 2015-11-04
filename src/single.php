@@ -17,7 +17,7 @@
 
       <!-- post details -->
       <div class="single__details">
-        <span class="single__byline">by <?php the_author_posts_link(); ?></span>
+        <div class="single__byline">by <?php the_author_posts_link(); ?></div>
 
         <div class="single__date">
           @@include('partials/icons/calendar.svg')
@@ -30,9 +30,11 @@
       <!-- /post details -->
 
       <!-- post thumbnail -->
+      <div class="single__featuredimg">
       <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-          <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+      <?php the_post_thumbnail(); // Fullsize image for the single post ?>
       <?php endif; ?>
+      </div>
       <!-- /post thumbnail -->
 
 
@@ -45,6 +47,7 @@
         <!-- main content -->
 
         <!-- tags -->
+        <div class="single__tags">
         <?php
         $posttags = get_the_tags();
         if ($posttags) :
@@ -53,6 +56,7 @@
         <a href="<?php echo get_tag_link($tag->term_id); ?>">#<?php echo $tag->name ?></a>
         <?php endforeach; ?>
         <?php endif; ?>
+        </div>
         <!-- /tags -->
 
         <!-- author info -->

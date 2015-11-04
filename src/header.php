@@ -42,37 +42,37 @@
   <div class="navbar__menu">
     <a href="#" class="menu-toggle" title="menu toggle">
       <span class="visuallyhidden">menu toggle</span>
-        @@include('partials/icons/menu.html')
+        @@include('partials/icons/menu.svg')
     </a>
     <ul class="sm-links">
       <li>
         <a href="#" class="sm-twitter">
           <span class="visuallyhidden">Twitter icon</span>
-           @@include('partials/icons/twitter.html')
+           @@include('partials/icons/twitter.svg')
         </a>
       </li>
       <li>
         <a href="#" class="sm-facebook">
           <span class="visuallyhidden">Facebook icon</span>
-           @@include('partials/icons/facebook.html')
+           @@include('partials/icons/facebook.svg')
         </a>
       </li>
       <li>
         <a href="#" class="sm-instagram">
           <span class="visuallyhidden">Instagram icon</span>
-           @@include('partials/icons/instagram.html')
+           @@include('partials/icons/instagram.svg')
         </a>
       </li>
       <li>
         <a href="#" class="sm-google">
           <span class="visuallyhidden">Google icon</span>
-           @@include('partials/icons/google.html')
+           @@include('partials/icons/google.svg')
         </a>
       </li>
       <li>
         <a href="#" class="sm-tumblr">
           <span class="visuallyhidden">Tumblr icon</span>
-           @@include('partials/icons/tumblr.html')
+           @@include('partials/icons/tumblr.svg')
         </a>
       </li>
     </ul>
