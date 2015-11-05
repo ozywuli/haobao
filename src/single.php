@@ -92,7 +92,7 @@
               <?php foreach ($sm as $name) { ?>
                 <?php if ( get_the_author_meta($name.'_profile') ): ?>
                   <li>
-                    <a href="<?php the_author_meta($name.'_profile') ?>" title="<?php echo $name ?>"><?php  get_template_part('assets/icons/inline', $name.'.svg'); ?></a>
+                    <a href="<?php the_author_meta($name.'_profile') ?>" title="<?php echo $name ?>" class="<?php echo $name.'-author' ?>"><?php  get_template_part('assets/icons/inline', $name.'.svg'); ?></a>
                   </li>
                 <?php endif; ?>
                   

@@ -17,7 +17,7 @@ toggleReveal($storiesToggle, $stories);
 
 function toggleReveal(toggle, target) {
   var hiddenTarget = true;
-  var targetRevealed = target.attr('class') + '--revealed';
+  var targetRevealed = target.attr('class').split(' ')[1] + '--revealed';
 
   toggle.on('click', function(e) {
     e.preventDefault();

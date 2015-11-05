@@ -7,6 +7,7 @@ $do_not_duplicate = $post->ID; ?>
 
   <!-- article -->
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+    <?php the_excerpt(); ?>
     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
     <!-- post thumbnail -->
       <?php if (has_post_thumbnail( $post->ID ) ): ?>
@@ -56,7 +57,7 @@ $do_not_duplicate = $post->ID; ?>
     <!-- post thumbnail -->
     <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
       <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-        <?php the_post_thumbnail(array(400,225)); // Declare pixel size you need inside the array ?>
+        <?php the_post_thumbnail(array(400,240)); // Declare pixel size you need inside the array ?>
       </a>
     <?php endif; ?>
     <!-- /post thumbnail -->
