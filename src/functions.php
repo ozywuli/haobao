@@ -5,8 +5,14 @@
 add_theme_support( 'post-thumbnails' );
 
 
-
-
+// Display only posts in search results
+function searchFilter($query) {
+    if ($query -> is_search) {
+        $query -> set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'searchFilter');
 
 
 /**

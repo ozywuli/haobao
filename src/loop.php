@@ -7,25 +7,44 @@ $do_not_duplicate = $post->ID; ?>
 
   <!-- article -->
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-    <?php the_excerpt(); ?>
     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-    <!-- post thumbnail -->
-      <?php if (has_post_thumbnail( $post->ID ) ): ?>
-      <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-      <div class="posts-featured__bg" style="background-image: url('<?php echo $image[0]; ?>')">
-      </div>
-      <?php endif; ?>
-    <!-- /post thumbnail -->
 
-    <!-- post overlay -->
-    <div class="posts-featured__overlay"></div>
-    <!-- /post overlay -->
 
-    <!-- post title -->
-    <h2 class="post__title">
-      <?php the_title(); ?>
-    </h2>
-    <!-- /post title -->
+    <!-- post text -->
+    <div class="post__text">
+      <!-- post title -->
+      <h2 class="post__title">
+        <?php the_title(); ?>
+      </h2>
+      <!-- /post title -->
+
+      <!-- post excerpt -->
+      <?php the_excerpt(); ?>
+      <!-- /post excerpt -->
+    </div>
+    <!-- /post text -->
+
+    <div class="post__img">
+      <!-- post thumbnail -->
+        <?php if (has_post_thumbnail( $post->ID ) ): ?>
+        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+        <div class="posts-featured__bg" style="background-image: url('<?php echo $image[0]; ?>')">
+        </div>
+        <?php endif; ?>
+      <!-- /post thumbnail -->
+
+
+      <!-- post overlay -->
+      <div class="posts-featured__overlay"></div>
+      <!-- /post overlay -->
+    </div>
+
+
+
+
+
+
+
 
     </a>
   </article>
