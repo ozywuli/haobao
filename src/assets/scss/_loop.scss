@@ -21,7 +21,7 @@
   vertical-align: top;
   width: 100%;
   padding: 0 0 10px 0;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   img {
     width: 100%;
     height: auto;
@@ -39,6 +39,7 @@
   @include respond-to('small') {
     width: 50%;
     padding: 0 5px 10px 5px;
+    font-size: 1.8rem;
   }
   @include respond-to('medium') {
     width: 33.33%;

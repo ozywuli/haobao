@@ -6,10 +6,34 @@
   text-align: center;
   text-transform: uppercase;
 
-  a {
-    color: #FFF;
-    font-weight: bold;
+  .copyright {
+    font-size: 1.4rem;
+    a {
+      color: #FFF;
+      font-weight: bold;
+      display: inline-block;
+      border-bottom: 3px solid #FFF;
+    }
+  }
+
+}
+
+
+.sm-links--footer {
+  margin-bottom: 40px;
+  text-align: center;
+
+  li {
     display: inline-block;
-    border-bottom: 3px solid #FFF;
+    margin-right: 15px;
+  }
+
+  svg {
+    width: auto;
+    height: 25px;
+    fill: #FFF;
+  }
+  path {
+    fill: #FFF !important;
   }
 }

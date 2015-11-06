@@ -40,11 +40,8 @@ function toggleReveal(toggle, target) {
 
 
 // FitVids
-
 $('.single__content').fitVids();
 
-console.log(1);
-console.log(2);
 
 
 }); // end document ready

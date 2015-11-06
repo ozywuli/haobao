@@ -109,8 +109,11 @@
       }
     }
     p {
-      width: 600px;
+      width: 100%;
+      max-width: 500px;
       margin: 20px auto;
+      text-align: center;
+      font-size: 1.4rem;
     }
   }
     .author-links {
@@ -192,6 +195,7 @@
 .rp4wp-related-posts ul {
   margin-right: -20px;
   font-size: 0;
+  text-align: center;
 
   a {
     color: #000;
@@ -200,17 +204,23 @@
     }
   }
 }
-.rp4wp-related-posts ul>li{
+.rp4wp-related-posts ul > li{
   display: inline-block;
   vertical-align: top;
-  width: 33.33%;
+  width: auto;
+  margin-bottom: 20px;
   padding-right: 20px;
   font-size: 1.4rem;
+
+  @include respond-to('small') {
+    width: 33.33%;
+    margin-bottom: 0;
+  }
 }
 .rp4wp-related-posts ul>li>p{
   margin:0;
   padding:0;
 }
 .rp4wp-related-post-image{
-  width: 100%;
+  width: 100;
 }

@@ -4,7 +4,6 @@ var preprocess = require('gulp-preprocess');
 var fileinclude = require('gulp-file-include')
 var rename = require("gulp-rename");
 var plumber = require('gulp-plumber');
-var watch = require('gulp-watch');
 var del = require('del');
 
 var sass = require('gulp-sass');
@@ -15,14 +14,12 @@ var minifycss = require('gulp-minify-css');
 
 
 function compileHTML() {
-  return gulp.src('./src/*.php')
-    // .pipe(watch('./src/*.php'))
+  return gulp.src('src/*.php')
     .pipe(fileinclude())
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
 }
 function compileCSS() {
-  return gulp.src('./src/assets/scss/*.scss')
-    // .pipe(watch('./src/assets/scss/*.scss'))
+  return gulp.src('src/assets/scss/*.scss')
     .pipe(plumber({
         errorHandler: function (err) {
             console.log(err);
@@ -40,13 +37,11 @@ function compileCSS() {
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
 }
 function compileJS() {
-  return gulp.src('./src/assets/js/**/*')
-    // .pipe(watch('./src/assets/js/**/*'))
+  return gulp.src('src/assets/js/**/*')
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/js'));
 }
 function compileICONS() {
-    return gulp.src('./src/assets/icons/*.php')
-    // .pipe(watch('./src/assets/icons/*.php'))
+    return gulp.src('src/assets/icons/*.php')
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/icons'));
 }
 
@@ -66,9 +61,6 @@ gulp.task('js', function() {
 gulp.task('icons', function() {
   return compileICONS();
 });
-gulp.task('clean', function(cb) {
-    del(['../wp-content/themes/haobao'], {force: true}, cb)
-});
 
 
 
@@ -76,19 +68,19 @@ gulp.task('clean', function(cb) {
 
 function watchHTML(error) {
     handleError(error);
-    gulp.watch(['./src/*.php'], ['html']);
+    gulp.watch(['src/*.php'], ['html']);
 }
 function watchCSS(error) {
     handleError(error);
-    gulp.watch(['./src/assets/scss/*.scss'], ['html']);
+    gulp.watch(['src/assets/scss/*.scss'], ['html']);
 }
 function watchJS(error) {
     handleError(error);
-    gulp.watch(['./src/assets/js/*.js'], ['html']);
+    gulp.watch(['src/assets/js/*.js'], ['html']);
 }
 function watchICONS(error) {
     handleError(error);
-    gulp.watch(['./src/assets/icons/*.php'], ['html'])
+    gulp.watch(['src/assets/icons/*.php'], ['html'])
 }
 function handleError(error) {
     var message = error;
@@ -105,6 +97,8 @@ function watchTask(error) {
 }
 
 
-
+gulp.task('clean', function(cb) {
+    del(['../wp-content/themes/haobao'], {force: true}, cb)
+});
 gulp.task('watch', ['html', 'css', 'js', 'icons'], watchTask);
 gulp.task('default', ['watch']);

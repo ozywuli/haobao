@@ -38,12 +38,16 @@
     <?php endif;
   ?>
   </div>
- 
+
+  <!-- navbar -->
   <div class="navbar__menu">
+    <!-- menu togle -->
     <a href="#" class="menu-toggle" title="menu toggle">
       <span class="visuallyhidden">menu toggle</span>
         @@include('partials/icons/menu.svg')
     </a>
+    <!-- /menu toggle -->
+    <!-- social media -->
     <ul class="sm-links">
       <li>
         <a href="#" class="sm-twitter">
@@ -76,7 +80,9 @@
         </a>
       </li>
     </ul>
+    <!-- /social media -->
   </div>
+  <!-- /navbar -->
 
     <ul class="navbar__utils">
       <li class="navbar__search">

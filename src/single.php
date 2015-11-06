@@ -152,13 +152,15 @@ rp4wp_children();
         <!-- post pagination -->
         <div class="pagination-posts">
 
+        <h3>Navigate</h3>
+
 
             <div class="next">
               <a href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>">
               <?php 
                 $nextPost = get_next_post();
                 if ($nextPost) {
-                  $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(400,225) );
+                  $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(400,240) );
                   echo $nextthumbnail;
                   echo $nextPost->post_title;
                 }
@@ -175,7 +177,7 @@ rp4wp_children();
             <?php
             $prevPost = get_previous_post();
             if ($prevPost) {
-              $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(400,225) );
+              $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(400,240) );
               echo $prevthumbnail;
               echo $prevPost->post_title;
             }

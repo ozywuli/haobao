@@ -32,17 +32,28 @@
   div {
     display: inline-block;
     vertical-align: top;
-    width: 50%;
+    width: 100%;
     font-size: 1.8rem;
     a {
       display: block;
+      color: #333;
+      &:hover {
+        color: $accent-hover;
+      }
     }
   }
-  .next {
-    padding-right: 10px;
-  }
-  .prev {
-    padding-left: 10px;
+
+
+  @include respond-to('small') {
+    div {
+      width: 50%;
+    }
+    .next {
+      padding-right: 10px;
+    }
+    .prev {
+      padding-left: 10px;
+    }
   }
 
 }

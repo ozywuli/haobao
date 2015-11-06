@@ -1,7 +1,16 @@
 <?php
 
-
+// Related posts
 add_filter( 'rp4wp_append_content', '__return_false' );
+
+
+add_image_size( 'related-posts', 400, 240 );
+
+
+function rp4wp_example_my_thumbnail_size( $thumb_size ) {
+    return 'related-posts';
+}
+add_filter( 'rp4wp_thumbnail_size', 'rp4wp_example_my_thumbnail_size' );
 
 
 
@@ -139,18 +148,6 @@ add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 /* Adding Image Upload Fields */
 add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
@@ -238,7 +235,6 @@ function my_show_extra_profile_fields( $user )
             });
         })(jQuery);
     </script>
-
 <?php 
 }
 

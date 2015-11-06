@@ -3,12 +3,61 @@
       <!-- footer -->
       <footer class="footer" role="contentinfo">
 
+
+
+
+
+
+        <!-- social media -->
+        <ul class="sm-links--footer">
+          <li>
+            <a href="#" class="sm-twitter">
+              <span class="visuallyhidden">Twitter icon</span>
+               @@include('partials/icons/twitter.svg')
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sm-facebook">
+              <span class="visuallyhidden">Facebook icon</span>
+               @@include('partials/icons/facebook.svg')
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sm-instagram">
+              <span class="visuallyhidden">Instagram icon</span>
+               @@include('partials/icons/instagram.svg')
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sm-google">
+              <span class="visuallyhidden">Google icon</span>
+               @@include('partials/icons/google.svg')
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sm-tumblr">
+              <span class="visuallyhidden">Tumblr icon</span>
+               @@include('partials/icons/tumblr.svg')
+            </a>
+          </li>
+        </ul>
+        <!-- /social media -->
+
+
+
+
+
+
         <!-- copyright -->
         <p class="copyright">
           &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
           <a href="//wordpress.org" title="WordPress">WordPress</a>
         </p>
         <!-- /copyright -->
+
+
+
+
 
       </footer>
       <!-- /footer -->
