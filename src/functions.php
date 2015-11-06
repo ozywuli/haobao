@@ -29,9 +29,9 @@ function haobao_scripts() {
     // Load our main stylesheet.
     wp_enqueue_style( 'haobao-style', get_stylesheet_uri() );
 
-    wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/lib/fitvids.js', array( 'jquery' ), 'false', true);
+    wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/assets/js/vendor/fitvids.js', array( 'jquery' ));
 
-    wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), 'false', true );
+    wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array( 'fitvids', 'jquery' ));
 
 
 }

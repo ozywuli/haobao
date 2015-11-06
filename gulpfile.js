@@ -16,13 +16,13 @@ var minifycss = require('gulp-minify-css');
 
 function compileHTML() {
   return gulp.src('./src/*.php')
-    .pipe(watch('./src/*.php'))
+    // .pipe(watch('./src/*.php'))
     .pipe(fileinclude())
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
 }
 function compileCSS() {
   return gulp.src('./src/assets/scss/*.scss')
-    .pipe(watch('./src/assets/scss/*.scss'))
+    // .pipe(watch('./src/assets/scss/*.scss'))
     .pipe(plumber({
         errorHandler: function (err) {
             console.log(err);
@@ -41,12 +41,12 @@ function compileCSS() {
 }
 function compileJS() {
   return gulp.src('./src/assets/js/**/*')
-    .pipe(watch('./src/assets/js/**/*'))
+    // .pipe(watch('./src/assets/js/**/*'))
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/js'));
 }
 function compileICONS() {
     return gulp.src('./src/assets/icons/*.php')
-    .pipe(watch('./src/assets/icons/*.php'))
+    // .pipe(watch('./src/assets/icons/*.php'))
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/icons'));
 }
 
@@ -54,7 +54,7 @@ function compileICONS() {
 
 
 
-gulp.task('html', ['icons', 'css', 'js'], function() {
+gulp.task('html', ['css', 'js', 'icons'], function() {
   return compileHTML();
 });
 gulp.task('css', function() {
@@ -67,7 +67,7 @@ gulp.task('icons', function() {
   return compileICONS();
 });
 gulp.task('clean', function(cb) {
-    del(['../test.txt'], cb, true)
+    del(['../wp-content/themes/haobao'], {force: true}, cb)
 });
 
 
@@ -101,9 +101,10 @@ function watchTask(error) {
     watchHTML();
     watchCSS();
     watchJS();
+    watchICONS();
 }
 
 
 
 gulp.task('watch', ['html', 'css', 'js', 'icons'], watchTask);
-gulp.task('default', ['clean', 'watch']);
+gulp.task('default', ['watch']);
