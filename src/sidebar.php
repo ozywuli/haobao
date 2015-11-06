@@ -61,6 +61,7 @@ if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar(
 
 
 <div class="sidebar stories">
+
   <h2>Recent Stories</h2>
   <ul>
   <?php $sidebar_query = new WP_Query( 'posts_per_page=5' );

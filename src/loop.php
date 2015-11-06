@@ -1,15 +1,13 @@
 <header class="posts-featured">
 
 <?php $my_query = new WP_Query( 'category_name=Featured&posts_per_page=3' );
-while ( $my_query->have_posts() ) : $my_query->the_post();
-$do_not_duplicate = $post->ID; ?>
+while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
 
   <!-- article -->
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+    <?php the_category(); ?>
     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-
-
     <!-- post text -->
     <div class="post__text">
       <!-- post title -->
@@ -41,11 +39,6 @@ $do_not_duplicate = $post->ID; ?>
 
 
 
-
-
-
-
-
     </a>
   </article>
   <!-- /article -->
@@ -55,11 +48,30 @@ $do_not_duplicate = $post->ID; ?>
 
 
 
+<?php $my_query = new WP_Query( 'posts_per_page=3' );
+while ( $my_query->have_posts() ) : $my_query->the_post();
+$do_not_duplicate[] = $post->ID; ?>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    <!-- post thumbnail -->
+    <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+        <?php the_post_thumbnail(array(400,240)); // Declare pixel size you need inside the array ?>
+      </a>
+    <?php endif; ?>
+    <!-- /post thumbnail -->
+
+    <!-- post title -->
+    <h2 class="post__title">
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+    </h2>
+    <!-- /post title -->
+
+
+  </article>
+<?php endwhile; ?>
 
 <!-- posts -->
-
-
-
 <main class="posts-container">
 
 <header class="posts--all">
@@ -68,7 +80,7 @@ $do_not_duplicate = $post->ID; ?>
 
   <section class="posts">
 
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<?php if (have_posts()): while (have_posts()) : the_post(); if(in_array($post->ID, $do_not_duplicate)) continue;;  ?>
 
   <!-- article -->
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
