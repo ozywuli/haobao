@@ -1,6 +1,10 @@
 <?php
 
 
+add_filter( 'rp4wp_append_content', '__return_false' );
+
+
+
 // Add featured image upload to post editor
 add_theme_support( 'post-thumbnails' );
 
@@ -24,6 +28,8 @@ function haobao_scripts() {
 
     // Load our main stylesheet.
     wp_enqueue_style( 'haobao-style', get_stylesheet_uri() );
+
+    wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/lib/fitvids.js', array( 'jquery' ), 'false', true);
 
     wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), 'false', true );
 

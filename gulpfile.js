@@ -4,6 +4,8 @@ var preprocess = require('gulp-preprocess');
 var fileinclude = require('gulp-file-include')
 var rename = require("gulp-rename");
 var plumber = require('gulp-plumber');
+var watch = require('gulp-watch');
+var del = require('del');
 
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
@@ -14,11 +16,13 @@ var minifycss = require('gulp-minify-css');
 
 function compileHTML() {
   return gulp.src('./src/*.php')
+    .pipe(watch('./src/*.php'))
     .pipe(fileinclude())
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
 }
 function compileCSS() {
-  return gulp.src('./src/assets/scss/style.scss')
+  return gulp.src('./src/assets/scss/*.scss')
+    .pipe(watch('./src/assets/scss/*.scss'))
     .pipe(plumber({
         errorHandler: function (err) {
             console.log(err);
@@ -36,11 +40,13 @@ function compileCSS() {
     .pipe(gulp.dest('../wp-content/themes/haobao/'))
 }
 function compileJS() {
-  return gulp.src('./src/assets/js/*.js')
+  return gulp.src('./src/assets/js/**/*')
+    .pipe(watch('./src/assets/js/**/*'))
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/js'));
 }
 function compileICONS() {
     return gulp.src('./src/assets/icons/*.php')
+    .pipe(watch('./src/assets/icons/*.php'))
     .pipe(gulp.dest('../wp-content/themes/haobao/assets/icons'));
 }
 
@@ -59,7 +65,10 @@ gulp.task('js', function() {
 });
 gulp.task('icons', function() {
   return compileICONS();
-})
+});
+gulp.task('clean', function(cb) {
+    del(['../test.txt'], cb, true)
+});
 
 
 
@@ -77,6 +86,10 @@ function watchJS(error) {
     handleError(error);
     gulp.watch(['./src/assets/js/*.js'], ['html']);
 }
+function watchICONS(error) {
+    handleError(error);
+    gulp.watch(['./src/assets/icons/*.php'], ['html'])
+}
 function handleError(error) {
     var message = error;
     if (typeof error === 'function' ) return;
@@ -93,4 +106,4 @@ function watchTask(error) {
 
 
 gulp.task('watch', ['html', 'css', 'js', 'icons'], watchTask);
-gulp.task('default', ['watch']);
+gulp.task('default', ['clean', 'watch']);

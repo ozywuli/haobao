@@ -108,6 +108,11 @@
         </div>
         <!-- /author info -->
 
+<!-- related posts -->
+<?php
+rp4wp_children();
+?>
+<!-- /related posts -->
 
 
         <!-- post pagination arrows -->
@@ -207,13 +212,6 @@
 </div>
 
 
-
-<?php
-function rp4wp_example_my_thumbnail_size( $thumb_size ) {
-  return 'my-thumbnail-size';
-}
-add_filter( 'rp4wp_thumbnail_size', 'rp4wp_example_my_thumbnail_size' );
-?>
 
 
 
