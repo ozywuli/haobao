@@ -2,7 +2,7 @@
 
 <main class="posts-container posts-container--cat">
 
-<header class="posts--all">
+<header class="post-header">
   <h2><?php single_cat_title(); ?></h2>
 </header>
 

@@ -2,7 +2,7 @@
 
 <main class="posts-container posts-container--cat">
 
-<header class="posts--all posts--search">
+<header class="post-header posts--search">
   <h2>Search</h2>
   @@include('partials/icons/search.svg')
 </header>

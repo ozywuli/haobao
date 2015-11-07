@@ -1,5 +1,51 @@
-<header class="posts-featured">
+<div class="posts-latest">
+  <header class="post-header">
+  <h2>Latest</h2>
+  </header>
 
+  <?php $my_query = new WP_Query( 'posts_per_page=6' );
+  while ( $my_query->have_posts() ) : $my_query->the_post();
+  $do_not_duplicate[] = $post->ID; ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+
+      <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+          <!-- post thumbnail -->
+            <?php if (has_post_thumbnail( $post->ID ) ): ?>
+            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+            <div class="posts__bg" style="background-image: url('<?php echo $image[0]; ?>')">
+            </div>
+            <?php endif; ?>
+          <!-- /post thumbnail -->
+
+          <div class="overlay__gradient"></div>
+
+          <!-- post title -->
+          <h2 class="post__title">
+            <?php the_title(); ?>
+          </h2>
+          <!-- /post title -->
+        </a>
+      <?php endif; ?>
+
+
+
+
+
+    </article>
+  <?php endwhile; ?>
+
+</div>
+
+
+<div class="posts-section posts-featured">
+
+<header class="post-header post-header--featured">
+  <h2>Featured</h2>
+</header>
+
+<section class="posts-featured__container">
 <?php $my_query = new WP_Query( 'category_name=Featured&posts_per_page=3' );
 while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
@@ -26,7 +72,7 @@ while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
       <!-- post thumbnail -->
         <?php if (has_post_thumbnail( $post->ID ) ): ?>
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-        <div class="posts-featured__bg" style="background-image: url('<?php echo $image[0]; ?>')">
+        <div class="posts__bg" style="background-image: url('<?php echo $image[0]; ?>')">
         </div>
         <?php endif; ?>
       <!-- /post thumbnail -->
@@ -44,37 +90,17 @@ while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
   <!-- /article -->
 
 <?php endwhile; ?>
-</header><!-- /featured posts -->
+</section>
+</div><!-- /featured posts -->
 
 
 
-<?php $my_query = new WP_Query( 'posts_per_page=3' );
-while ( $my_query->have_posts() ) : $my_query->the_post();
-$do_not_duplicate[] = $post->ID; ?>
-  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <!-- post thumbnail -->
-    <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-        <?php the_post_thumbnail(array(400,240)); // Declare pixel size you need inside the array ?>
-      </a>
-    <?php endif; ?>
-    <!-- /post thumbnail -->
-
-    <!-- post title -->
-    <h2 class="post__title">
-      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-    </h2>
-    <!-- /post title -->
-
-
-  </article>
-<?php endwhile; ?>
 
 <!-- posts -->
 <main class="posts-container">
 
-<header class="posts--all">
+<header class="post-header">
   <h2>The Stack</h2>
 </header>
 

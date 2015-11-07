@@ -242,6 +242,9 @@
       display: inline-block;
       vertical-align: middle;
       color: $primary;
+      &:hover {
+        color: $accent-hover;
+      }
     }
   }
 
