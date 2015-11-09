@@ -1,0 +1,13 @@
+.ad-center {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.ad-left {
+  margin-bottom: 20px;
+  text-align: center;
+  @include respond-to('medium') {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}

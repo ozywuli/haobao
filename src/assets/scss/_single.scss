@@ -224,3 +224,10 @@
 .rp4wp-related-post-image{
   width: 100;
 }
+
+
+
+.fluid-width-video-wrapper {
+  width: calc(100% + 40px) !important;
+  margin-left: -20px;
+}

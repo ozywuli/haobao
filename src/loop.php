@@ -1,4 +1,4 @@
-<div class="posts-latest">
+<div class="post-section">
   <header class="post-header">
   <h2>Latest</h2>
   </header>
@@ -39,7 +39,7 @@
 </div>
 
 
-<div class="posts-section posts-featured">
+<div class="posts-featured">
 
 <header class="post-header post-header--featured">
   <h2>Featured</h2>

@@ -41,6 +41,18 @@
         <!-- single content -->
         <div class="single__content">
 
+        <div class="ad-left">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- 300x250 -->
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:300px;height:250px"
+               data-ad-client="ca-pub-4463260030244142"
+               data-ad-slot="9311068111"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+
 
         <!-- main content -->
         <?php the_content(); // Dynamic Content ?>
